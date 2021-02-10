@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>All Products Red-Store</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="image_main/logo-black.png" width="100px" class="change">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="image_main/cart.png" width="30px" height="30px">
+                <img src="image_main/menu.png" class='menu-icon' onclick="menutoggle()">
+            </div>
+        </div>
+        
+    <!-----------Account Page-------------->
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="image_main/groceries.png" width="100%">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Log in</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="Indicator">
+                        </div>
+                    <form id="LoginForm">
+                        <input type="text" placeholder="UserName">
+                        <input type="password" placeholder='Password'>
+                        <button type='submit' class='btn'>Log in</button>
+                        <a href="">Forgot Password</a>
+                    </form>
+                    <form id="RegForm">
+                        <input type="text" placeholder="UserName">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder='Password'>
+                        <button type='submit' class='btn'>Register </button>
+                        <a href="">Forgot Password</a>
+                    </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---Footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App(Coming soon)</h3>
+                    <p>Download App for Android and ios platforms</p>
+                    <div class="app-logo">
+                        <img src="image_main/play-store.png" >
+                        <img src="image_main/app-store.png" >
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="image_main/logo.png">
+                    <p>RedStore is a low-price online supermarket that allows you to order products across categories like grocery, vegetables,
+                        household care, baby care and gets them delivered to your doorstep.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Usefull links</h3>
+                    <ul>
+                        <li>Coupans</li>
+                        <li>Blogs</li>
+                        <li>Return Policy</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us on</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class='copyright'>Copyright 2020 - Red Store</p>
+        </div>
+    </div>
+<!--JS for Toggle-->
+    <script>
+        var menuitems = document.getElementById('MenuItems')
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight=='0px'){
+                MenuItems.style.maxHeight = '200px';
+            }
+            else{
+                MenuItems.style.maxHeight="0px";
+            }
+        }
+    </script>
+<!--Js for product gall-->
+    <script>
+        var ProductImg = document.getElementById('ProductImg');
+        var SmallImg = document.getElementsByClassName('small-img');
+        SmallImg[0].onclick = function(){
+            ProductImg.src = SmallImg[0].src;
+            }
+        SmallImg[1].onclick = function(){
+                ProductImg.src = SmallImg[1].src;
+            }
+        SmallImg[2].onclick = function(){
+                    ProductImg.src = SmallImg[2].src;
+            }
+    </script>
+<!--Js for toggle form-->
+    <script>
+        var LoginForm=document.getElementById("LoginForm");
+        var RegForm =document.getElementById('RegForm');
+        var Indicator = document.getElementById('Indicator');
+        function register(){
+            RegForm.style.transform = 'translateX(0px)';
+            LoginForm.style.transform = 'translateX(0px)';
+            Indicator.style.transform = 'translateX(100px)'
+        }
+        function login(){
+            RegForm.style.transform = 'translateX(300px)';
+            LoginForm.style.transform = 'translateX(300px)';
+            Indicator.style.transform = 'translateX(0px)'
+        }
+    </script>
+    </body>
+
+</html>
